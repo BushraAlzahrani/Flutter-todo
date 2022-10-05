@@ -30,26 +30,28 @@ class _MyWidgetState extends State<Home> {
         // floatingActionButton: ,
         body: Stack(
           children: [
-            Container(
-              margin: const EdgeInsets.only(top: 50),
-              child: Padding(
-                  padding: EdgeInsets.all(20),
-                  child: Column(children: <Widget>[
-                    Container(
-                        height: 60,
-                        width: 400,
-                        child: Text('Todo List',
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.bold,
-                            ))),
-                    for (ToDo task in todoList.reversed)
-                      ToDoItem(
-                        todo: task,
-                        onToDoChanged: _handleTodoChange,
-                        onDeleteItem: _deleteTodoItem,
-                      ),
-                  ])),
+            SingleChildScrollView(
+              child: Container(
+                margin: const EdgeInsets.only(top: 20),
+                child: Padding(
+                    padding: EdgeInsets.all(20),
+                    child: Column(children: <Widget>[
+                      Container(
+                          height: 60,
+                          width: 400,
+                          child: Text('Todo List',
+                              style: TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ))),
+                      for (ToDo task in todoList.reversed)
+                        ToDoItem(
+                          todo: task,
+                          onToDoChanged: _handleTodoChange,
+                          onDeleteItem: _deleteTodoItem,
+                        ),
+                    ])),
+              ),
             ),
             Align(
               alignment: Alignment.bottomCenter,
