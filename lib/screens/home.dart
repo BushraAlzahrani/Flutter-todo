@@ -30,9 +30,10 @@ class _MyWidgetState extends State<Home> {
         // floatingActionButton: ,
         body: Stack(
           children: [
-            SingleChildScrollView(
+            Expanded(
+                child: SingleChildScrollView(
               child: Container(
-                margin: const EdgeInsets.only(top: 20),
+                // margin: const EdgeInsets.only(top: 20),
                 child: Padding(
                     padding: EdgeInsets.all(20),
                     child: Column(children: <Widget>[
@@ -52,7 +53,7 @@ class _MyWidgetState extends State<Home> {
                         ),
                     ])),
               ),
-            ),
+            )),
             Align(
               alignment: Alignment.bottomCenter,
               child: Row(children: [
