@@ -1,27 +1,33 @@
 import 'package:flutter/material.dart';
 
-class ToDoPage extends StatefulWidget {
+class AddTasks extends StatefulWidget {
   @override
-  State<ToDoPage> createState() => _MyWidgetState();
+  State<AddTasks> createState() => _MyWidgetState();
 }
 
-class _MyWidgetState extends State<ToDoPage> {
+class _MyWidgetState extends State<AddTasks> {
+  TextEditingController taskcontroller= TextEditingController();
+
+  addtask(){
+
+  }
   
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const Text('Add Tasks'),
-          backgroundColor: Colors.deepOrangeAccent,
+          title: Text('TODO'),
+          //  backgroundColor: Colors.orange,
         ),
         body: Container(
+          margin: const EdgeInsets.only(top: 50),
           child: Padding(
               padding: EdgeInsets.all(20),
               child: Column(children: <Widget>[
                 TextField(
+                  controller: taskcontroller,
                   autocorrect: false,
                   textInputAction: TextInputAction.send,
-                  controller: null,
                   textAlign: TextAlign.left,
                   textDirection: TextDirection.ltr,
                   cursorColor: Colors.black,
@@ -36,21 +42,15 @@ class _MyWidgetState extends State<ToDoPage> {
                     labelText: 'Write Your task',
                   ),
                 ),
-                OutlinedButton(
-                  style: OutlinedButton.styleFrom(
-                    shape: StadiumBorder(),
-                    side: BorderSide(width: 2, color: Colors.blue),
-                    backgroundColor: Colors.blue,
-                    primary: Colors.white,
+                SizedBox(height: 10,),
+                Container(
+                  width: double.infinity,
+                  height: 50,
+                  child: ElevatedButton(
+                    child: Text('Add Task'),
+                    onPressed: () {},
                   ),
-                  onPressed: () {},
-                  child: Text('Add Task'),
                 ),
-                ListTile(
-                  trailing: Checkbox(value: false , onChanged: null,),
-                  title: Text('first task'),
-                ),
-
               ])),
         ));
   }
