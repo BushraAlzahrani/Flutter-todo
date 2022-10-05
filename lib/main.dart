@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/addtasks.dart';
 import 'package:my_app/screens/home.dart';
-import 'package:my_app/screens/register_screen.dart';
+
 
 
 void main() {
@@ -25,7 +24,6 @@ class MyApp extends StatelessWidget {
       initialRoute: 'home',
       routes: {
         'home':(context) => Home(),
-        'register':(context) => RegisterUser(),
         'addtasks':(context)=> AddTasks()
       },
 
