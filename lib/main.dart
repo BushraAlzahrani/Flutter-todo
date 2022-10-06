@@ -1,32 +1,27 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/screens/addtasks.dart';
 import 'package:my_app/screens/home.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 
 
-void main() {
-  runApp(const MyApp());
+
+void main()  {
+  // WidgetsFlutterBinding.ensureInitialized();
+ 
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  // final Future<FirebaseApp> _fbApp = Firebase.initializeApp();
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark().copyWith(
-        primaryColor: Color.fromARGB(255, 181, 105, 43),
-        accentColor: Color.fromARGB(255, 88, 119, 172),
-      )
-      ,
+      theme: ThemeData.dark(),
       title: 'Todo List',
-      initialRoute: 'home',
-      routes: {
-        'home':(context) => Home(),
-        'addtasks':(context)=> AddTasks()
-      },
-
+      home: Home(),
     );
     
   }

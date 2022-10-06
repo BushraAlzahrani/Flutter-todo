@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../widgets/todo_item.dart';
 import '../model/todo.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -27,13 +28,13 @@ class _MyWidgetState extends State<Home> {
             ],
           ),
         ),
-        // floatingActionButton: ,
+        
         body: Stack(
           children: [
             Expanded(
                 child: SingleChildScrollView(
               child: Container(
-                // margin: const EdgeInsets.only(top: 20),
+                margin: const EdgeInsets.only(top: 20),
                 child: Padding(
                     padding: EdgeInsets.all(20),
                     child: Column(children: <Widget>[
